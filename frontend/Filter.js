@@ -89,7 +89,6 @@ const Filter = ({ categories, handleSubmit }) => {
           <input
             type="text"
             onChange={(e) => {
-              console.log(e.target.value)
               setSearch(e.target.value)
             }}
           />
