@@ -19,7 +19,7 @@ init_db()
 
 ## Start backend server
 ```
-python backend/application.py
+
 ```
 Changes to backend code are auto reloaded.
 

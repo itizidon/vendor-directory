@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { CSVLink } from 'react-csv'
 import { css } from 'aphrodite'
 import { gql, useQuery, useMutation } from '@apollo/client'
 import Text from './lib/Text'
@@ -239,6 +240,11 @@ function App() {
         <Text title1>{titleText}</Text>
       </div>
       <Filter categories={categories} handleSubmit={handleSubmit} />
+      {vendors.filter ? (
+          <CSVLink data={vendors.filter} asyncOnClick={true}>
+            Download Data
+          </CSVLink>
+        ) : null}
       <div className="table-wrapper">
         <table id="customers">
           <thead>
@@ -271,6 +277,7 @@ function App() {
               : null}
           </tbody>
         </table>
+
       </div>
     </div>
   )
